@@ -10,7 +10,7 @@ import task from './lib/task';
 // TODO: Update deployment URL
 const remote = {
   name: 'github',
-  url: 'https://github.com/nelseric/fhack.git',
+  url: 'git@github.com:nelseric/fhack.git',
   branch: 'gh-pages',
 };
 
