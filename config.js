@@ -5,8 +5,8 @@
  */
 
 export default {
-  title: 'React Static Boilerplate',
-  description: 'Static website generator for React.js web applications.',
+  title: 'Fallout Hacking Tool',
+  description: 'Tool to solve Fallout hacking puzzles',
   googleAnalyticsId: 'UA-XXXXX-X',
 };
 
