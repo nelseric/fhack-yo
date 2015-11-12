@@ -59,7 +59,7 @@ export default class extends Component {
                     word.text.split("").map(function(_ch, ix){
                       return(
                         <td>
-                          {(word.possibles.indexOf(ix) != 0) ? (<a onClick={self.handleClick(word,ix)} href="#">{ix}</a>) : null}
+                          {(word.possibles.indexOf(ix) != -1) ? (<a onClick={self.handleClick(word,ix)} href="#">{ix}</a>) : null}
                         </td>
                       );
                     })
