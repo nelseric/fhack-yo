@@ -1,0 +1,22 @@
+/**
+ * React Static Boilerplate
+ * https://github.com/koistya/react-static-boilerplate
+ * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
+ */
+
+@import '../variables.scss';
+
+
+.WordList {
+  border: 1px solid black;
+}
+
+.word {
+  font-family: $font-family-game-words
+}
+
+td {
+  text-align: right;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}

@@ -6,13 +6,17 @@
 
 import React, { Component } from 'react';
 
+import WordList from '../components/WordList'
+
+import Util from '../lib/Util'
+
 export default class extends Component {
 
   render() {
     return (
       <div>
-        <h1>Test Article 1</h1>
-        <p>Coming soon.</p>
+        <h1>Solver</h1>
+        <WordList words={Util.words()}/>
       </div>
     );
   }

@@ -7,6 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import GoogleAnalytics from '../GoogleAnalytics';
 import { title, description } from '../../config';
+import 'underscore';
 
 class Html extends Component {
 
