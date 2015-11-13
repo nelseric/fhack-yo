@@ -47,7 +47,7 @@ class WordList extends Component {
             <th>Avg</th>
             <th>Dud</th>
             {
-              this.props.words[0].text.split("").map(function(_ch, ix){
+              this.state.words[0].text.split("").map(function(_ch, ix){
                 return(
                   <th key={ix}>{ix}</th>
                 );
@@ -57,7 +57,7 @@ class WordList extends Component {
         </thead>
         <tbody>
           {
-            this.props.words.map(function(word) {
+            this.state.words.map(function(word) {
               return(
                 <tr className="word" key={word.text} >
                   <td>

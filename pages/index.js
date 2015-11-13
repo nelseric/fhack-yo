@@ -17,7 +17,7 @@ export default class extends Component {
     return (
       <div>
         <h1>Solver</h1>
-        <WordList words={Util.words()}/> 
+        <WordList /> 
         <NewWordForm />
       </div>
     );
