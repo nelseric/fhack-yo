@@ -15,10 +15,12 @@
     "eslint-plugin-react": "^3.5.1",
     "fbjs": "^0.3.2",
     "file-loader": "^0.8.4",
+    "flux": "^2.1.1",
     "git-repository": "^0.1.1",
     "glob": "^5.0.15",
     "history": "^1.12.5",
     "hygienist-middleware": "^0.1.0",
+    "keymirror": "^0.1.1",
     "lodash.merge": "^3.3.2",
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.3",
@@ -49,5 +51,8 @@
     "build": "babel-node --eval \"require('./tools/build')().catch(err => console.log(err.stack))\"",
     "start": "babel-node --eval \"require('./tools/start')().catch(err => console.log(err.stack))\"",
     "deploy": "babel-node --eval \"require('./tools/deploy')().catch(err => console.log(err.stack))\""
+  },
+  "jshintConfig": {
+    "esnext": true
   }
 }

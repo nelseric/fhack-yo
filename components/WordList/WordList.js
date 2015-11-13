@@ -1,27 +1,41 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
 import React, { Component } from 'react';
 import './WordList.scss';
-import Link from '../Link';
+import Actions from '../../lib/Actions';
+import WordStore from '../../lib/WordStore';
 
-export default class extends Component {
+class WordList extends Component {
 
-  handleClick(word, match_value){
+  constructor() {
+    super();
+    this._handleClick = this._handleClick.bind(this);
+    this._onChange = this._onChange.bind(this);
+
+    this.state = WordStore.getState();
+  }
+
+  componentDidMount() {
+    WordStore.addChangeListener(this._onChange);
+  }
+
+  componentWillUnmount() {
+    WordStore.removeChangeListener(this._onChange);
+  }
+
+  _onChange() {
+    this.state = WordStore.getState();
+  }
+
+  _handleClick(word, match_value){
     if(match_value === 'dud'){
       return function(evt){
-        console.log(`${word.text} is a dud.`);
+        Actions.deleteWord(word.text);
       }
     } else {
       return function(evt){
-        console.log(`${word.text} has ${match_value} matches`);
+        Actions.wordHint(word, match_value);
       }
     }
   }
-
 
   render() {
     const self = this;
@@ -29,13 +43,13 @@ export default class extends Component {
       <table className='WordList'>
         <thead>
           <tr>
-            <th>Word</th>
+            <th>{this.state.foo} Word</th>
             <th>Avg</th>
             <th>Dud</th>
             {
               this.props.words[0].text.split("").map(function(_ch, ix){
                 return(
-                  <th>{ix}</th>
+                  <th key={ix}>{ix}</th>
                 );
               })
             }
@@ -53,13 +67,13 @@ export default class extends Component {
                     {word.averageLikeness}
                   </td>
                   <td>
-                    <a onClick={self.handleClick(word,'dud')} href="#">Dud</a>
+                    <a onClick={self._handleClick(word,'dud')} href="#">Dud</a>
                   </td>
                   {
                     word.text.split("").map(function(_ch, ix){
                       return(
-                        <td>
-                          {(word.possibles.indexOf(ix) != -1) ? (<a onClick={self.handleClick(word,ix)} href="#">{ix}</a>) : null}
+                        <td key={ix}>
+                          {(word.possibles.indexOf(ix) != -1) ? (<a onClick={self._handleClick(word,ix)} href="#">{ix}</a>) : null}
                         </td>
                       );
                     })
@@ -72,5 +86,7 @@ export default class extends Component {
       </table>
     );
   }
-
 }
+
+
+export default WordList;

@@ -11,6 +11,8 @@ import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
 import Location from './lib/Location';
 import Layout from './components/Layout';
 
+import WordStore from './lib/WordStore'
+
 const routes = {}; // Auto-generated on build. See tools/lib/routes-loader.js
 
 const route = async (path, callback) => {
