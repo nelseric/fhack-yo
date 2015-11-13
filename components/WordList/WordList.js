@@ -22,7 +22,7 @@ class WordList extends Component {
   }
 
   _onChange() {
-    this.state = WordStore.getState();
+    this.setState(WordStore.getState());
   }
 
   _handleClick(word, match_value){
@@ -32,7 +32,7 @@ class WordList extends Component {
       }
     } else {
       return function(evt){
-        Actions.wordHint(word, match_value);
+        Actions.wordHint(word.text, match_value);
       }
     }
   }
@@ -47,7 +47,7 @@ class WordList extends Component {
             <th>Avg</th>
             <th>Dud</th>
             {
-              this.state.words[0].text.split("").map(function(_ch, ix){
+              WordStore.getSizeIterator().map(function(_ch, ix){
                 return(
                   <th key={ix}>{ix}</th>
                 );
@@ -70,7 +70,7 @@ class WordList extends Component {
                     <a onClick={self._handleClick(word,'dud')} href="#">Dud</a>
                   </td>
                   {
-                    word.text.split("").map(function(_ch, ix){
+                    WordStore.getSizeIterator().map(function(_ch, ix){
                       return(
                         <td key={ix}>
                           {(word.possibles.indexOf(ix) != -1) ? (<a onClick={self._handleClick(word,ix)} href="#">{ix}</a>) : null}
