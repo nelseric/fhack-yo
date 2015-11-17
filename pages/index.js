@@ -6,23 +6,12 @@
 
 import React, { Component } from 'react';
 
-import WordList from '../components/WordList'
-import NewWordForm from '../components/NewWordForm';
-import ResetConstraintsButton from '../components/ResetConstraintsButton';
-
-import Util from '../lib/Util'
+import FHackApp from '../components/FHackApp';
 
 export default class extends Component {
 
   render() {
-    return (
-      <div>
-        <h1>Solver</h1>
-        <NewWordForm />
-        <WordList />
-        <ResetConstraintsButton />
-      </div>
-    );
+    return (<FHackApp />);
   }
 
 }
