@@ -6,17 +6,32 @@
 
 @import '../variables.scss';
 
-
-.WordList {
-  border: 1px solid black;
-}
-
-.word {
-  font-family: $font-family-game-words
-}
-
 td {
   text-align: right;
   padding-right: 0.5em;
   padding-left: 0.5em;
+}
+table {
+  /*border: 1px solid $border-color;*/
+  border-collapse: collapse;
+}
+
+/*table td,th {
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}*/
+
+a {
+  color: $link-color
+}
+
+button {
+  background: none;
+  color: $link-color;
+  border: 1px solid $border-color;
+}
+input {
+  background: none;
+  color: $link-color;
+  border: 1px solid $border-color;
 }

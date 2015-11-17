@@ -8,18 +8,21 @@
  * Scaffolding
  * -------------------------------------------------------------------------- */
 
-$body-bg: #f7f7f7;
-$text-color: #333;
-$brand-color: #21ce99;
+$body-bg: #000000;
+$text-color: #22ff22;
+$brand-color: #22ff22;
+
+$border-color: #22ee22;
+$link-color: #33ff33;
 
 /*
  * Typography
  * -------------------------------------------------------------------------- */
 
-$font-family-base: 'Roboto', 'Helvetica', sans-serif;
-$font-family-game-words: 'Inconsolata', 'Droid Sans Mono', monospace;
+/* $font-family-base: 'Roboto', 'Helvetica', sans-serif; */
+$font-family-base: 'Inconsolata', 'Droid Sans Mono', monospace;
 
-
+ 
 /*
  * Media queries breakpoints
  * -------------------------------------------------------------------------- */
